@@ -1,0 +1,45 @@
+{
+  "name": "ip_scraper",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "browserify-fs": "^1.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "nodemailer": "^6.4.11",
+    "pdf-parse": "^1.1.1",
+    "puppeteer": "^5.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "request-promise": "^4.2.6",
+    "smmry": "^1.0.2",
+    "winston": "^3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
