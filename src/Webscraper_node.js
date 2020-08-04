@@ -299,8 +299,8 @@ function EmailSummary (header, content, linkToOriginalArticle, textReduction) {
   
   const mailOptions = {
     from: 'Pietracoops@gmail.com',
-    //to: 'massimo.pietracupa@gmail.com, bianca.pietracupa@gmail.com',
-    to: 'massimo.pietracupa@gmail.com',
+    to: 'massimo.pietracupa@gmail.com, bianca.pietracupa@gmail.com',
+    //to: 'massimo.pietracupa@gmail.com',
     subject: header,
     //text: content
     attachments: [{
@@ -340,54 +340,5 @@ function exportFile(path, filename, content){
 }
 
 
-//FOR PARTICULAR ARTICLE
-
-function exportFileGeneric(filename, content){
-
-  console.log("Exporting File to  : " + ExportPath + '\\' + filename);
-  fs.writeFile(ExportPath + '\\' + filename + ".txt", content, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
-
-
-}
-
-function fetchArticleContentsWithLink (link) {
-
-  //console.log(input);
-  var ArticleHTML;
-  var ArticleContent = "";
-  var DocumentContent = "";
-  const ArticleURL = link + frameactive;
-
-  rp(ArticleURL)
-    .then(function(ArticleHTML){
-      //success!
-      
-      //console.log(ArticleHTML);
-
-      const $ = cheerio.load(ArticleHTML); // load the html in cheerio
-
-      $('.documentcontent').each((i, el) => {
-          const item = $(el).text();
-          DocumentContent = DocumentContent + item;
-      });
-
-      $('.ParagNum').each((i, el) => {
-          const item = $(el).text();
-          ArticleContent = ArticleContent + item;
-      });
-      exportFileGeneric("generic_export",DocumentContent);
-
-    })
-    .catch(function(err){
-        console.log("fetchArticleContentsWithLink didn't work")
-      //handle error
-    });
-
-    //console.log(strings);
-
-}
 
 
